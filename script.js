@@ -10,7 +10,7 @@ var gamePlaying = false;
 var tonePlaying = false;
 var volume = 0.5;  //must be between 0.0 and 1.0
 var guessCounter = 0;
-var mistakes = 1;
+var mistakes = 0;
 
 function startGame(){
     //initialize game variables
@@ -132,12 +132,10 @@ function guess(btn){
     }
   }
   else {
+    mistakes++;
+    alert("Incorrect. Strike " + mistakes);
     if (mistakes == 3) {
         loseGame();
     }
-    else {
-        alert("Incorrect. Strike " + mistakes);
-    }
-    mistakes++;
   }
 }
